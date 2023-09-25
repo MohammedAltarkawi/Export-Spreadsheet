@@ -1,0 +1,56 @@
+<edmx:Edmx xmlns:edmx="http://schemas.microsoft.com/ado/2007/06/edmx"
+	xmlns:m="http://schemas.microsoft.com/ado/2007/08/dataservices/metadata" xmlns:sap="http://www.sap.com/Protocols/SAPData" Version="1.0">
+	<edmx:Reference xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx"
+		Uri="https://wecidew.icig.global:44300/sap/opu/odata/IWFND/CATALOGSERVICE;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_COMMON',Version='0001',SAP__Origin='')/$value"><edmx:Include Namespace="com.sap.vocabularies.Common.v1" Alias="Common"/></edmx:Reference>
+	<edmx:Reference xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx"
+		Uri="https://wecidew.icig.global:44300/sap/opu/odata/IWFND/CATALOGSERVICE;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_CAPABILITIES',Version='0001',SAP__Origin='')/$value"><edmx:Include Namespace="Org.OData.Capabilities.V1" Alias="Capabilities"/></edmx:Reference>
+	<edmx:Reference xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx"
+		Uri="https://wecidew.icig.global:44300/sap/opu/odata/IWFND/CATALOGSERVICE;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_COMMUNICATION',Version='0001',SAP__Origin='')/$value"><edmx:Include Namespace="com.sap.vocabularies.Communication.v1" Alias="Communication"/></edmx:Reference>
+	<edmx:Reference xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx"
+		Uri="https://wecidew.icig.global:44300/sap/opu/odata/IWFND/CATALOGSERVICE;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_AGGREGATION',Version='0001',SAP__Origin='')/$value"><edmx:Include Namespace="Org.OData.Aggregation.V1" Alias="Aggregation"/></edmx:Reference>
+	<edmx:Reference xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx"
+		Uri="https://wecidew.icig.global:44300/sap/opu/odata/IWFND/CATALOGSERVICE;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_PERSONALDATA',Version='0001',SAP__Origin='')/$value"><edmx:Include Namespace="com.sap.vocabularies.PersonalData.v1" Alias="PersonalData"/></edmx:Reference>
+	<edmx:DataServices m:DataServiceVersion="2.0">
+		<Schema xmlns="http://schemas.microsoft.com/ado/2008/09/edm" Namespace="cds_zz_sd_bsik_acdoca" xml:lang="en" sap:schema-version="1">
+			<EntityType Name="ZZ_C_BSIK_ACDOCAType" sap:label="Consumption of BSIK ACDOCA" sap:content-version="1">
+				<Key><PropertyRef Name="Rldnr"/><PropertyRef Name="Rbukrs"/><PropertyRef Name="Gjahr"/><PropertyRef Name="Belnr"/><PropertyRef Name="Docln"/></Key><Property Name="Rldnr" Type="Edm.String" Nullable="false" MaxLength="2" sap:display-format="UpperCase" sap:label="Ledger"
+					sap:quickinfo="Ledger in General Ledger Accounting"/><Property Name="Rbukrs" Type="Edm.String" Nullable="false" MaxLength="4" sap:display-format="UpperCase" sap:label="Company Code"/><Property Name="Gjahr" Type="Edm.String" Nullable="false" MaxLength="4" sap:display-format="NonNegative" sap:label="Fiscal Year"/><Property Name="Belnr" Type="Edm.String" Nullable="false" MaxLength="10" sap:display-format="UpperCase" sap:label="Document Number"
+					sap:quickinfo="Accounting Document Number"/><Property Name="Docln" Type="Edm.String" Nullable="false" MaxLength="6" sap:display-format="UpperCase" sap:label="Line Item"
+					sap:quickinfo="Six-Character Posting Item for Ledger"/><Property Name="Ryear" Type="Edm.String" MaxLength="4" sap:display-format="NonNegative" sap:label="G/L Fiscal Year"
+					sap:quickinfo="General Ledger Fiscal Year"/><Property Name="Rrcty" Type="Edm.String" MaxLength="1" sap:display-format="UpperCase" sap:label="Record Type"/><Property Name="Awtyp" Type="Edm.String" MaxLength="5" sap:display-format="UpperCase" sap:label="Reference procedure"/><Property Name="Awref" Type="Edm.String" MaxLength="10" sap:display-format="UpperCase" sap:label="Reference document"
+					sap:quickinfo="Reference document number"/><Property Name="Prctr" Type="Edm.String" MaxLength="10" sap:display-format="UpperCase" sap:label="Profit Center"/><Property Name="Segment" Type="Edm.String" MaxLength="10" sap:display-format="UpperCase" sap:label="Segment"
+					sap:quickinfo="Segment for Segmental Reporting"/><Property Name="Budat" Type="Edm.DateTime" Precision="0" sap:display-format="Date" sap:label="Posting Date"
+					sap:quickinfo="Posting Date in the Document"/><Property Name="Bldat" Type="Edm.DateTime" Precision="0" sap:display-format="Date" sap:label="Document Date"
+					sap:quickinfo="Document Date in Document"/><Property Name="Blart" Type="Edm.String" MaxLength="2" sap:display-format="UpperCase" sap:label="Document type"/><Property Name="Bschl" Type="Edm.String" MaxLength="2" sap:display-format="UpperCase" sap:label="Posting Key"/><Property Name="Bstat" Type="Edm.String" MaxLength="1" sap:display-format="UpperCase" sap:label="Document Status"/><Property Name="Linetype" Type="Edm.String" MaxLength="5" sap:display-format="UpperCase" sap:label="Item Category"/><Property Name="Ktosl" Type="Edm.String" MaxLength="3" sap:display-format="UpperCase" sap:label="Transaction"
+					sap:quickinfo="Transaction Key"/><Property Name="Ebeln" Type="Edm.String" MaxLength="10" sap:display-format="UpperCase" sap:label="Purchasing Document"
+					sap:quickinfo="Purchasing Document Number"/><Property Name="Ebelp" Type="Edm.String" MaxLength="5" sap:display-format="NonNegative" sap:label="Item"
+					sap:quickinfo="Item Number of Purchasing Document"/><Property Name="Matnr" Type="Edm.String" MaxLength="18" sap:display-format="UpperCase" sap:label="Material" sap:quickinfo="Material Number"/><Property Name="Sgtxt" Type="Edm.String" MaxLength="50" sap:label="Text" sap:quickinfo="Item Text"/><Property Name="Koart" Type="Edm.String" MaxLength="1" sap:display-format="UpperCase" sap:label="Account type"/><Property Name="Objnr" Type="Edm.String" MaxLength="22" sap:display-format="UpperCase" sap:label="Object number"/><Property Name="Hrkft" Type="Edm.String" MaxLength="14" sap:display-format="UpperCase" sap:label="CO subkey"
+					sap:quickinfo="CO key subnumber"/><Property Name="Aufnr" Type="Edm.String" MaxLength="12" sap:display-format="UpperCase" sap:label="Order" sap:quickinfo="Order Number"/><Property Name="Autyp" Type="Edm.String" MaxLength="2" sap:display-format="NonNegative" sap:label="Order category"/><Property Name="Hsl" Type="Edm.Decimal" Precision="24" Scale="3" sap:label="Amnt in CompCd Crcy"
+					sap:quickinfo="Amount in Company Code Currency"/><Property Name="Rhcur" Type="Edm.String" MaxLength="5" sap:label="CompanyCode Currency" sap:quickinfo="Company Code Currency"
+					sap:semantics="currency-code"/><Property Name="Racct" Type="Edm.String" MaxLength="10" sap:display-format="UpperCase" sap:label="Account Number"/><Property Name="Mwskz" Type="Edm.String" MaxLength="2" sap:display-format="UpperCase" sap:label="Tax Code"
+					sap:quickinfo="Tax on sales/purchases code"/><Property Name="Bukrs" Type="Edm.String" MaxLength="4" sap:display-format="UpperCase" sap:label="Company Code"/><Property Name="Lifnr" Type="Edm.String" MaxLength="10" sap:display-format="UpperCase" sap:label="Vendor"
+					sap:quickinfo="Account Number of Vendor or Creditor"/><Property Name="Umsks" Type="Edm.String" MaxLength="1" sap:display-format="UpperCase" sap:label="Sp. G/L Trans.Type"
+					sap:quickinfo="Special G/L Transaction Type"/><Property Name="Augdt" Type="Edm.DateTime" Precision="0" sap:display-format="Date" sap:label="Clearing Date"/><Property Name="Augbl" Type="Edm.String" MaxLength="10" sap:display-format="UpperCase" sap:label="Clearing Document"
+					sap:quickinfo="Document Number of the Clearing Document"/><Property Name="Gjahrb" Type="Edm.String" MaxLength="4" sap:display-format="NonNegative" sap:label="Fiscal Year"/><Property Name="Belnrb" Type="Edm.String" MaxLength="10" sap:display-format="UpperCase" sap:label="Document Number"
+					sap:quickinfo="Accounting Document Number"/><Property Name="Budatb" Type="Edm.DateTime" Precision="0" sap:display-format="Date" sap:label="Posting Date"
+					sap:quickinfo="Posting Date in the Document"/><Property Name="Bldatb" Type="Edm.DateTime" Precision="0" sap:display-format="Date" sap:label="Document Date"
+					sap:quickinfo="Document Date in Document"/><Property Name="Blartb" Type="Edm.String" MaxLength="2" sap:display-format="UpperCase" sap:label="Document type"/></EntityType>
+			<EntityContainer Name="cds_zz_sd_bsik_acdoca_Entities" m:IsDefaultEntityContainer="true" sap:message-scope-supported="true"
+				sap:supported-formats="atom json xlsx"><EntitySet Name="ZZ_C_BSIK_ACDOCA" EntityType="cds_zz_sd_bsik_acdoca.ZZ_C_BSIK_ACDOCAType" sap:creatable="false" sap:updatable="false"
+				sap:deletable="false" sap:content-version="1"/></EntityContainer>
+			<Annotations xmlns="http://docs.oasis-open.org/odata/ns/edm" Target="cds_zz_sd_bsik_acdoca.cds_zz_sd_bsik_acdoca_Entities">
+				<Annotation Term="Aggregation.ApplySupported">
+					<Record>
+						<PropertyValue Property="Transformations">
+							<Collection>
+								<String>aggregate</String>
+								<String>groupby</String>
+								<String>filter</String>
+							</Collection>
+						</PropertyValue><PropertyValue Property="Rollup" EnumMember="None"/></Record>
+				</Annotation>
+			</Annotations><atom:link xmlns:atom="http://www.w3.org/2005/Atom" rel="self"
+				href="https://wecidew.icig.global:44300/sap/opu/odata/sap/ZZ_SB_BSIK_ACDOCA/$metadata"/><atom:link xmlns:atom="http://www.w3.org/2005/Atom" rel="latest-version"
+				href="https://wecidew.icig.global:44300/sap/opu/odata/sap/ZZ_SB_BSIK_ACDOCA/$metadata"/></Schema>
+	</edmx:DataServices>
+</edmx:Edmx>
