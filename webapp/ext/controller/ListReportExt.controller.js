@@ -103,7 +103,7 @@ sap.ui.define([
 						resultDictionary[superRacct].Hsl += parsedHsl;
 						//resultDictionary[superRacct].Hsl = Number(resultDictionary[superRacct].Hsl.toFixed(2))
 						resultDictionary[superMwskz].Hsl += parsedHsl;
-						//resultDictionary[superMwskz].Hsl = Number(resultDictionary[superMwskz].Hsl.toFixed(2)) test 
+						//resultDictionary[superMwskz].Hsl = Number(resultDictionary[superMwskz].Hsl.toFixed(2))
 
 						item.level = resultDictionary[superMwskz].level + 1;
 						if (!lostChild) {
@@ -115,7 +115,7 @@ sap.ui.define([
 
 					});
 
-					var currentLangu = that._getLanguage();
+					//var currentLangu = that._getLanguage();
 
 					/*if (currentLangu === "de-DE") {
 						resultArray.forEach(function (item) {
