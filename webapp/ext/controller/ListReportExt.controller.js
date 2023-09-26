@@ -99,11 +99,11 @@ sap.ui.define([
 						const parsedHsl = parseFloat(Hsl);
 						topLevelHslSum += parsedHsl;
 						resultDictionary[superRbukrs].Hsl += parsedHsl;
-						//resultDictionary[superRbukrs].Hsl = Number(resultDictionary[superRbukrs].Hsl.toFixed(2))
+						resultDictionary[superRbukrs].Hsl = Number(resultDictionary[superRbukrs].Hsl.toFixed(2))
 						resultDictionary[superRacct].Hsl += parsedHsl;
-						//resultDictionary[superRacct].Hsl = Number(resultDictionary[superRacct].Hsl.toFixed(2))
+						resultDictionary[superRacct].Hsl = Number(resultDictionary[superRacct].Hsl.toFixed(2))
 						resultDictionary[superMwskz].Hsl += parsedHsl;
-						//resultDictionary[superMwskz].Hsl = Number(resultDictionary[superMwskz].Hsl.toFixed(2))
+						resultDictionary[superMwskz].Hsl = Number(resultDictionary[superMwskz].Hsl.toFixed(2))
 
 						item.level = resultDictionary[superMwskz].level + 1;
 						if (!lostChild) {
@@ -126,7 +126,7 @@ sap.ui.define([
 					resultArray.unshift({
 						Rbukrs: "All",
 						Rhcur: currency,
-						Hsl: topLevelHslSum,
+						Hsl: Number(topLevelHslSum.toFixed(2)),
 						level: 0
 					});
 
@@ -173,7 +173,7 @@ sap.ui.define([
 				property: "Rbukrs"
 			});
 			aColumns.push({
-				label: "Year",
+				label: this.getResourceBundle().getText("Year"),
 				property: "Gjahr",
 				width: '4'
 			});
@@ -241,11 +241,15 @@ sap.ui.define([
 
 			aColumns.push({
 				label: "Psting Date",
-				property: "Budat"
+				property: "Budat",
+				type: EdmType.Date,
+				format: 'dd.mm.yyyy',
 			});
 			aColumns.push({
 				label: "Doc. Date",
-				property: "Bldat"
+				property: "Bldat",
+				type: EdmType.Date,
+				format: 'dd.mm.yyyy',
 			});
 			aColumns.push({
 				label: "Amount",
@@ -254,10 +258,6 @@ sap.ui.define([
 				unitProperty: "Rhcur",
 				width: '18'
 			});
-			/*aColumns.push({
-				label: "Currency",
-				property: "Rhcur"
-			});*/
 			aColumns.push({
 				label: "Account Nr.",
 				property: "Racct"
@@ -268,65 +268,64 @@ sap.ui.define([
 				type: EdmType.String,
 				width: "2"
 			});
-
-			/*
 			aColumns.push({
-				label: "CoCd",
-				property: "Bukrs"
+				label: "Aufnr",
+				property: "Aufnr"
 			});
 			aColumns.push({
-				label: "LnItm",
-				property: ""
+				label: "Autyp",
+				property: "Autyp"
 			});
 			aColumns.push({
-				label: "GLFY",
-				property: ""
+				label: "Awref",
+				property: "Awref"
 			});
 
 			aColumns.push({
-				label: "ref Doc",
-				property: ""
+				label: "Ebeln",
+				property: "Ebeln"
 			});
 			aColumns.push({
-				label: "DocType",
-				property: ""
+				label: "Ebelp",
+				property: "Ebelp"
 			});
 			aColumns.push({
-				label: "S",
-				property: ""
+				label: "Ktosl",
+				property: "Ktosl"
 			});
 			aColumns.push({
-				label: "Trs",
-				property: ""
+				label: "Material",
+				property: "Matnr"
+			});
+
+			aColumns.push({
+				label: "Obj",
+				property: "Objnr"
 			});
 			aColumns.push({
-				label: "Prurch. Doc",
-				property: ""
+				label: "Bstat",
+				property: "Bstat"
 			});
 			aColumns.push({
-				label: "Item",
-				property: ""
+				label: "Augbl",
+				property: "Augbl"
 			});
-			aColumns.push({
-				label: "Order",
-				property: ""
-			});
-			aColumns.push({
+			/*aColumns.push({
 				label: "Cat",
 				property: ""
-			});
-			aColumns.push({
-				label: "clring Doc.",
-				property: ""
-			});
-			aColumns.push({
-				label: "year",
-				property: ""
-			});
-			aColumns.push({
-				label: "doc No",
-				property: ""
 			});*/
+			aColumns.push({
+				label: this.getResourceBundle().getText("Year"),
+				property: "Ryear"
+			});
+			aColumns.push({
+				label: "Sgtxt",
+				property: "Sgtxt"
+			});
+			aColumns.push({
+				label: "Umsks",
+				property: "Umsks"
+			});
 
 			return aColumns;
 		},
